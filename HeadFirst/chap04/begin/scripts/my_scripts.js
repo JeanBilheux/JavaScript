@@ -9,6 +9,7 @@ $(document).ready(function(){
             $(".meat").after('<li class="tofu"><em>tofu</em></li>');
             $m = $(".meat").detach();
             $("li.hamburger").replaceWith('<li class="portobello">Portobello Mushroom</li>');
+            $(".tofu").parent().parent().addClass("veg_leaf");
             v = true;
         };     
     }); //end of button vegOn
@@ -17,7 +18,11 @@ $(document).ready(function(){
         if (v == true) {
             $("li.portobello").replaceWith('<li class="hamburger">hamburger</li>');
             $(".menu_entrees li").first().before($f);
-            
+            $(".tofu").each(function(i) {
+               $(this).after($m[i]); 
+            }); // end each
+            $(".tofu").parent().parent().removeClass("veg_leaf");
+            $(".tofu").remove();
             v = false;
         }
         
