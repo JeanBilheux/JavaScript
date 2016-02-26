@@ -1,0 +1,75 @@
+#frame {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 545px;
+    height: 629px;
+    background-image: url(../images/frame.png);
+    z-index= 2;
+    overflow: hidden;
+}
+
+#pic_box {
+    position: relative;
+    left: 91px;
+    top: 84px;
+    width: 367px;
+    height: 460px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#head {
+    height: 172px;   
+}
+
+
+#eyes {
+    height: 79px;   
+}
+
+#nose {
+    height: 86px;   
+}
+
+#mouth {
+    height: 117px;   
+}
+
+#container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+}
+
+.lightning {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+    display: none;
+}
+
+body {
+    background-color: black;
+}
+
+#top img {
+    position: relative;
+    left: 80px;
+}
+
+#top p {
+    color: #33FF66;
+    font-family: fantasy, sans-serif;
+    font-size: 20px;
+}
+
+#top {
+    position: absolute;
+    z-index: 4;
+    left: 135px;
+    top: 15px;
+}
+
