@@ -20,20 +20,23 @@
 }
 
 #head {
-    height: 172px;   
+    height: 172px; 
+    position: relative;
 }
 
-
 #eyes {
-    height: 79px;   
+    height: 79px;  
+    position: relative;
 }
 
 #nose {
-    height: 86px;   
+    height: 86px;
+    position: relative;
 }
 
 #mouth {
     height: 117px;   
+    position: relative;
 }
 
 #container {
