@@ -64,4 +64,30 @@ $(document).ready(function(){
         new card('King', 'Spades', 10), 
     ];
     
+    var used_cards = new Array();
+    
+    function deal() {
+        for (var i=0; i<2; i++) {
+            hit();
+        }
+    }
+    
+    function getRandom(num) {
+        var my_num = Math.floor(Math.random() * num);
+        return my_num;
+    }
+    
+    function hit() {
+        var good_card = false;
+        do {
+            
+            
+            
+        } until (!good_card)
+        
+        good_card = false;
+        
+        
+    };
+    
 });
