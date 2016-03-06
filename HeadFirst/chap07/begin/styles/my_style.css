@@ -66,18 +66,21 @@ z-index: 4;
 }
 
 #head{
+    position: relative;
 	height:172px;
 }
 
 #eyes{
-height:79px; 
+height:79px;
+position: relative;
 }
 
 #nose{
 height:86px; 
+position: relative;
 }
 
 #mouth{
 height:117px; 
-
+position: relative;
 }
