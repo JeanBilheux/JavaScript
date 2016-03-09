@@ -16,6 +16,15 @@
     margin-left: 10px;
     border-radius: 8px;
     width: 800px;
-    
-    
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+p img {
+    width: 400px;
+    height: 200px;
+    border-style: inset
 }
