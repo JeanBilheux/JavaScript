@@ -1,16 +1,27 @@
 $(document).ready(function () {
 
+    var repeat = true;
     var FREQ = 10000;  // 10s
     
+    function showFrequency() {
+      $("#freq").html("Page refreshes every " + FREQ/1000 + " second(s).");  
+    };
+    showFrequency();
+
+    function getTimeAjax() {
+        $("#updatedTime").load("time.php");
+    }
+    
     function startAJAXcalls() {
-        setTimeout(function() {
-            getXMLRacers(); 
-            startAJAXcalls();
-        }, FREQ);
+        if (repeat) {
+            setTimeout(function() {
+                getXMLRacers(); 
+                startAJAXcalls();
+            }, FREQ);
+        };
     }; // end of startAJAXcalls
     
     function getXMLRacers() {
-    
         $.ajax({
             url: "finishers.xml",   // file to load
             cache: false,   // this caches the results locally
@@ -43,30 +54,42 @@ $(document).ready(function () {
     
         }); // end of ajax
     
-        getTime();
+        getTimeAjax();
         
     } //end of function getXMLracers
 	
+    $("#btnStop").click(function() {
+        repeat = false;
+        $("#freq").html("Updated Stop!");
+    });
+
+    $("#btnStart").click(function() {
+        repeat = true;
+        startAJAXcalls();
+        showFrequency();
+    })
+    
     getXMLRacers();
     startAJAXcalls();
+    getTimeAjax();
     
-	function getTime() {
-        var a_p = "";
-        var d = new Date();
-        var curr_hour = d.getHours();
-        
-        (curr_hour < 12) ? a_p = "AM" : a_p = "PM";
-        (curr_hour == 0) ? curr_hour = 12 : curr_hour = curr_hour;
-        (curr_hour > 12) ? curr_hour = curr_hour - 12 : curr_hour = curr_hour;
-        
-        var curr_min = d.getMinutes().toString();
-        var curr_sec = d.getSeconds().toString();
-        
-        if (curr_min.length == 1) { curr_min = "0" + curr_min; }
-        if (curr_sec.length == 1) { curr_sec = "0" + curr_sec; } 
-        
-        $('#updatedTime').html(curr_hour + ":" + curr_min + ":" + curr_sec + " " + a_p );
-    }
+//	function getTime() {
+//        var a_p = "";
+//        var d = new Date();
+//        var curr_hour = d.getHours();
+//        
+//        (curr_hour < 12) ? a_p = "AM" : a_p = "PM";
+//        (curr_hour == 0) ? curr_hour = 12 : curr_hour = curr_hour;
+//        (curr_hour > 12) ? curr_hour = curr_hour - 12 : curr_hour = curr_hour;
+//        
+//        var curr_min = d.getMinutes().toString();
+//        var curr_sec = d.getSeconds().toString();
+//        
+//        if (curr_min.length == 1) { curr_min = "0" + curr_min; }
+//        if (curr_sec.length == 1) { curr_sec = "0" + curr_sec; } 
+//        
+//        $('#updatedTime').html(curr_hour + ":" + curr_min + ":" + curr_sec + " " + a_p );
+//    }
     
-    getTime();
+   
 });
