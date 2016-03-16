@@ -1,14 +1,15 @@
 body {
   background: #000000 top left; 
   color: #FFFFFF;
-  margin: 20px;
+  margin: 40px;
   font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
   font-size:12px;
+  padding: 10px;
 }
 
 
 .form_pad{
-  padding-left: 15px;
+  padding-left: 25px;
   padding-right: 15px;
 }
 
@@ -17,3 +18,49 @@ body {
 	background: transparent;
 	padding-bottom: 15px;
 }
+
+.ui-widget-content h3 {
+ padding-left: 10px;   
+}
+
+.ui-widget-content div, .ui-widget-content {
+ padding-left: 10px;   
+ padding-right: 10px;
+}
+
+/* color slider styles */
+#slide_dist, #slide_height, #slide_weight {
+ margin-bottom: 4px;   
+}
+
+#swatch {
+    width: 75px;
+    height: 75px;
+    background-image: none;
+}
+
+#red .ui-slider-handle {
+    border-color: #ef2929;
+}
+
+#red .ui-slider-range{
+    background: #ef2929;
+}
+
+#green .ui-slider-handle{
+    border-color: #8ae234;
+}
+
+#green .ui-slider-range{
+    background: #8ae234;
+}
+
+#blue .ui-slider-handle{
+    border-color: #729fcf;
+}
+
+#blue .ui-slider-range{
+    background: #729fcf;
+}
+
+
