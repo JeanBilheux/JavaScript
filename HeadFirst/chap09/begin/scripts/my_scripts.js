@@ -69,6 +69,35 @@ $(document).ready(function () {
         showFrequency();
     })
     
+
+    $("#btnSave").click(function() {
+        
+        var data = $("#addRunner :input").serializeArray();
+        $.post($("#addRunner").attr('action'), data, function(json) {
+            
+            if (json.status == "fail") {
+                alert(json.message);
+            }
+            
+            if (json.status == "success") {
+                alert(json.message);
+                clearInputs();
+            }
+        }, "json");
+        
+        });
+        
+    function clearInputs() {
+        $("#addRunner :input:not(:hidden)").each(function(i) {
+            $(this).val('');
+        });
+    }; // end of clearInputs
+
+    $("#addRunner").submit(function() {
+       return false; 
+    });
+
+    
     getXMLRacers();
     startAJAXcalls();
     getTimeAjax();
