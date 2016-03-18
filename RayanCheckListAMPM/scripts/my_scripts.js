@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   $(".button").click(function() {
-      $(this).css({"background-color": "green"})
+      $(this).css({"background-color": "green"}).delay(3000).fadeOut("3000");
   })
 	
 var h = window.innerHeight;
